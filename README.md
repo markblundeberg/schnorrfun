@@ -1,5 +1,7 @@
 # schnorrfun
 
+[As seen on TV!](https://coinspice.io/news/first-bitcoin-cash-schnorr-multisig-transaction-is-a-donation-to-free-ross-ulbricht/)
+
 1. Everyone runs setup.py to make key shares.
 2. Everyone runs sign.py to sign a transaction.
 3. No thresholds on this one, just N-of-N.
