@@ -12,12 +12,6 @@ from ecc import ser_to_point, point_to_ser, G, order, fieldsize, INFINITY, jacob
 
 prefix="bitcoincash"
 
-if len(sys.argv) <= 1 or not sys.argv[1]:
-    print("Usage: %s mysigningdata.json"%(sys.argv[0]))
-    sys.exit(1)
-
-datafilename = sys.argv[1]
-
 class ProtoProblem(Exception):
     pass
 
@@ -216,9 +210,16 @@ Schnorr multisigger!
 Warning: this is for DEMONSTRATION and does not necessarily use safe/secure
 techniques. Beware, funds can be easily lost!
 """)
+    if len(sys.argv)>1 and sys.argv[1]:
+        datafilename = sys.argv[1]
+    else:
+        datafilename="mysigningdata.json"
+        print("Defaulting to load %s"%(datafilename))
+
     try:
         if not os.path.exists(datafilename):
-            print("File not found: %s"(datafilename))
+            print("File not found: %s"%(datafilename))
+            print("Usage: %s [file.json]"%(sys.argv[0]))
             sys.exit(1)
         with open(datafilename, 'r') as f:
             setupdata = json.load(f)

@@ -10,11 +10,6 @@ from ecc import ser_to_point, point_to_ser, G, order, fieldsize, INFINITY
 G = ecdsa.SECP256k1.generator
 
 prefix="bitcoincash"
-print(sys.argv)
-if len(sys.argv)>1 and sys.argv[1]:
-    datafilename = sys.argv[1]
-else:
-    datafilename="mysigningdata.json"
 
 class ProtoProblem(Exception):
     pass
@@ -107,6 +102,10 @@ Schnorr multisigger!
 Warning: this is for DEMONSTRATION and does not necessarily use safe/secure
 techniques. Beware, funds can be easily lost!
 """)
+    if len(sys.argv)>1 and sys.argv[1]:
+        datafilename = sys.argv[1]
+    else:
+        datafilename="mysigningdata.json"
     try:
         if not os.path.exists(datafilename):
             setupdata = setup()
