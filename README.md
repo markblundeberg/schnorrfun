@@ -26,8 +26,8 @@ Signing:
 - If R's y coordinate has jacobi symbol -1, then all parties negate k and R_i for the following process.
 - Let rbytes = R.x() encoded as 32-byte big endian.
 - Let e = SHA256(rbytes + aggpub + message) decoded as big endian integer.
-- Parties calculate s = k + e*privatekey and share s values
-- Parties verify each other's s values according to s_i*G == R_i + e*pub_i.
+- Parties calculate s = `k + e*privatekey` and share s values
+- Parties verify each other's s values according to `s_i*G == R_i + e*pub_i`.
 - Parties assemble final sig by summing s values.
 
 The R commitment phase likewise avoids rogue point attacks. Non-deterministic randomness of k is crucial to avoid retry attacks (see MuSig paper).
