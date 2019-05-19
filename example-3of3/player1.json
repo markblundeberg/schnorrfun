@@ -1,0 +1,9 @@
+{
+  "privatekey": "81c5d7d6c31e70b453296c268199431d1b8b60e59ac6650838ab9016e3eb9c97",
+  "otherpubkeys": [
+    "027d2f61aba8837d6fd98913357d5c52f0fcb0c89cf740e5a883ef1c9187d80eaa",
+    "02e6ae93eeda8f34a6f33840a150e82ad05dfabcb5eb6db7d7201399a2e73c8c37"
+  ],
+  "aggaddress": "bitcoincash:qz44v7878f8ez90jx46ukf8ljd30l6lsmumtesjrcj",
+  "note": "player1"
+}
