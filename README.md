@@ -30,6 +30,8 @@ Signing:
 - Parties verify each other's s values according to s_i*G == R_i + e*pub_i.
 - Parties assemble final sig by summing s values.
 
+The R commitment phase likewise avoids rogue point attacks. Non-deterministic randomness of k is crucial to avoid retry attacks (see MuSig paper).
+
 ## How to get tx for signing
 
 To get a transaction for signing is really annoying right now.
